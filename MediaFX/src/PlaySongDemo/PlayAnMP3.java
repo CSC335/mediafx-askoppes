@@ -3,7 +3,14 @@ package PlaySongDemo;
 /**
  * This code will play any song assuming that file is in folder songfiles. 
  * 
- * Programmer Rick Mercer
+ * Run configuration notes for the future: Uncheck all the boxes in the 
+ * Run Configuration > Arguments section, and add the following to VM args:
+ * --module-path "/Applications/javafx-sdk-19.0.2.1/lib" 
+ * --add-modules javafx.controls,javafx.media
+ * (Those should be on the same line, but there wasn't enough space to put
+ * them there in this comment.)
+ * 
+ * Programmer Adrianna Koppes, Rick Mercer
  */
 import java.io.File;
 import java.net.URI;
@@ -28,7 +35,8 @@ public class PlayAnMP3 extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     BorderPane pane = new BorderPane();
-    String path = "songfiles/Capture.mp3";
+    // Adrianna Koppes changed the name of the song that will play.
+    String path = "songFiles/DanseMacabreViolinHook.mp3";
     pane.setCenter( new Label(path));
     playASong(path);
     // Put the pane in a sized Scene and show the GUI
